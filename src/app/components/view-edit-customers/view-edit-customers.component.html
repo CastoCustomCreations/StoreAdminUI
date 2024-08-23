@@ -1,0 +1,76 @@
+<div class="content">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <h3>Add New Customer</h3>
+    <div class="labelinput">
+      <label for="firstName"
+        ><span> First Name:</span
+        ><input id="firstName" formControlName="firstName" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="lastName"
+        ><span>Last Name:</span
+        ><input id="lastName" formControlName="lastName" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="address1"
+        ><span>Address 1:</span>
+        <input id="address1" formControlName="address1" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="address2"
+        ><span>Address 2:</span
+        ><input id="address2" formControlName="address2" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="city"
+        ><span>City: </span><input id="city" formControlName="city" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="state"
+        ><span>State:</span>
+        <input id="state" formControlName="state" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="zipcode"
+        ><span>Zip Code:</span
+        ><input id="zipcode" formControlName="zipcode" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="phone"
+        ><span>Phone:</span
+        ><input id="phone" formControlName="phone" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="email"
+        ><span>Email:</span
+        ><input id="email" formControlName="email" type="email"
+      /></label>
+    </div>
+    <div>
+      <label for="userName"
+        ><span>Username:</span
+        ><input id="userName" formControlName="userName" type="text"
+      /></label>
+    </div>
+    <div>
+      <label for="password"
+        ><span>Password:</span>
+        <input
+          id="password"
+          formControlName="password"
+          type="password" /></label
+      ><br />
+    </div>
+    <div>
+      <button type="submit">Add</button>
+    </div>
+  </form>
+</div>

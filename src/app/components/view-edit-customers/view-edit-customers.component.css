@@ -1,0 +1,26 @@
+label {
+  display: block;
+  position: relative;
+}
+
+label span {
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+}
+
+label input,
+label textarea,
+label select {
+  margin-left: 150px;
+}
+button{
+  margin-left: 275px;
+}
+content{
+  width: 50%;
+}
+h3{
+  margin-left: 20px;
+  margin-top: 20px;
+}

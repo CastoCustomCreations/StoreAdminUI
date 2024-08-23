@@ -1,0 +1,27 @@
+<p>view-edit-products works!</p>
+<div class="add-product-form">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" type="text">
+      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+        Name is required.
+      </div>
+    </div>
+    <div>
+      <label for="units">Units:</label>
+      <input id="units" formControlName="units" type="number">
+      <div *ngIf="productForm.get('units')?.invalid && productForm.get('units')?.touched">
+        Units must be at least 1.
+      </div>
+    </div>
+    <div>
+      <label for="price">Price:</label>
+      <input id="price" formControlName="price" type="decimal" step="0.01">
+      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+        Price must be a positive number.
+      </div>
+    </div>
+    <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+  </form>
+</div>

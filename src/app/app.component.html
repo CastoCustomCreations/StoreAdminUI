@@ -1,4 +1,5 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- <app-add-product></app-add-product>
+<app-product-list></app-product-list> -->
 <!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
 <!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
@@ -175,7 +176,41 @@
       margin-block: 1.5rem;
     }
   }
+  .tab{
+    background-color: cornflowerblue;
+  }
 </style>
+<Header><h1>Admin DashBoard</h1></Header>
+<mat-tab-group class="tab">
+  <mat-tab label="Customers"><app-view-edit-customers></app-view-edit-customers> Content 1 </mat-tab>
+  <mat-tab label="Orders"><app-view-edit-orders></app-view-edit-orders> Content 3 </mat-tab>
+  <mat-tab label="Products"><app-view-edit-products></app-view-edit-products> Content 2 </mat-tab>
+  <mat-tab label="Suppliers"><app-view-edit-suppliers></app-view-edit-suppliers> Content 4 </mat-tab>
+  <mat-tab label="Shipping"><app-view-edit-shippers></app-view-edit-shippers> Content 5 </mat-tab>
+</mat-tab-group>
+<mat-drawer-container class="example-container">
+  <mat-drawer class="side-navigation" mode="side" opened><div class="pill-group">
+    <ng-container *ngFor="let item of [
+      { title: 'Customers', link: '/customers' },
+      { title: 'Products', link: '/products' },
+      { title: 'Orders', link: '/orders' },
+      { title: 'Suppliers', link: '/suppliers' },
+      { title: 'Shipping', link: '/shipping' },
+    ]; trackBy: trackByTitle">
+      <a
+        class="pill"
+        [routerLink]="item.link"
+        target="_blank"
+        rel="noopener"
+      >
+        <span>{{ item.title }}</span>
+      </a>
+    </ng-container>
+  </div>
+  </mat-drawer>
+  <mat-drawer-content class ="editform">Edit Form content</mat-drawer-content>
+  <mat-drawer-content class ="databaseview">database view content</mat-drawer-content>
+</mat-drawer-container>
 
 <main class="main">
   <div class="content">
@@ -231,34 +266,23 @@
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
+        <ng-container *ngFor="let item of [
+          { title: 'Customers', link: '/customers' },
+          { title: 'Products', link: '/products' },
+          { title: 'Orders', link: '/orders' },
+          { title: 'Suppliers', link: '/suppliers' },
+          { title: 'Shipping', link: '/shipping' },
+        ]; trackBy: trackByTitle">
           <a
             class="pill"
-            [href]="item.link"
+            [routerLink]="item.link"
             target="_blank"
             rel="noopener"
           >
             <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
           </a>
-        }
-      </div>
+        </ng-container>
+      </div>      </div>
       <div class="social-links">
         <a
           href="https://github.com/angular/angular"
@@ -321,8 +345,7 @@
         </a>
       </div>
     </div>
-  </div>
-</main>
+ </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
