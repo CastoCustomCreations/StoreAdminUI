@@ -3,25 +3,189 @@
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="name">Name:</label>
-      <input id="name" formControlName="name" type="text">
-      <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+      <input id="name" formControlName="name" type="text" />
+      <div
+        *ngIf="
+          productForm.get('name')?.invalid && productForm.get('name')?.touched
+        "
+      >
         Name is required.
       </div>
     </div>
     <div>
       <label for="units">Units:</label>
-      <input id="units" formControlName="units" type="number">
-      <div *ngIf="productForm.get('units')?.invalid && productForm.get('units')?.touched">
+      <input id="units" formControlName="units" type="number" />
+      <div
+        *ngIf="
+          productForm.get('units')?.invalid && productForm.get('units')?.touched
+        "
+      >
         Units must be at least 1.
       </div>
     </div>
     <div>
       <label for="price">Price:</label>
-      <input id="price" formControlName="price" type="decimal" step="0.01">
-      <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+      <input id="price" formControlName="price" type="decimal" step="0.01" />
+      <div
+        *ngIf="
+          productForm.get('price')?.invalid && productForm.get('price')?.touched
+        "
+      >
         Price must be a positive number.
       </div>
     </div>
     <button type="submit" [disabled]="productForm.invalid">Add Product</button>
   </form>
+</div>
+<div class="view-products-table">
+  <mat-table>
+    <!-- Id Definition -->
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Id }} </mat-cell>
+    </ng-container>
+
+    <!-- Name Definition -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Name }} </mat-cell>
+    </ng-container>
+
+    <!-- Price Definition -->
+    <ng-container matColumnDef="Price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Price }} </mat-cell>
+    </ng-container>
+
+    <!-- CatergoryId Definition -->
+    <ng-container matColumnDef="CatergoryId">
+      <mat-header-cell *matHeaderCellDef> CatergoryId </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.CatergoryId }} </mat-cell>
+    </ng-container>
+
+    <!-- ImageOne Definition -->
+    <ng-container matColumnDef="ImageOne">
+      <mat-header-cell *matHeaderCellDef> ImageOne </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageOne }} </mat-cell>
+    </ng-container>
+
+    <!-- ImageTwo Definition -->
+    <ng-container matColumnDef="ImageTwo">
+      <mat-header-cell *matHeaderCellDef> ImageTwo </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageTwo }} </mat-cell>
+    </ng-container>
+
+    <!-- ImageThree Definition -->
+    <ng-container matColumnDef="ImageThree">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageThree }} </mat-cell>
+    </ng-container>
+
+    <!-- ImageFour Definition -->
+    <ng-container matColumnDef="ImageFour">
+      <mat-header-cell *matHeaderCellDef> ImageFour </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageFour }} </mat-cell>
+    </ng-container>
+
+    <!-- ImageFive Definition -->
+    <ng-container matColumnDef="ImageFive">
+      <mat-header-cell *matHeaderCellDef> ImageFive </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageFive }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitsInStock Definition -->
+    <ng-container matColumnDef="UnitsInStock">
+      <mat-header-cell *matHeaderCellDef> UnitsInStock </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsInStock }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitsOnOrder Definition -->
+    <ng-container matColumnDef="UnitsOnOrder">
+      <mat-header-cell *matHeaderCellDef> UnitsOnOrder </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsOnOrder }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitsReorderLevel Definition -->
+    <ng-container matColumnDef="UnitsReorderLevel">
+      <mat-header-cell *matHeaderCellDef> UnitsReorderLevel </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsReorderLevel }} </mat-cell>
+    </ng-container>
+
+    <!-- SupplierId Definition -->
+    <ng-container matColumnDef="SupplierId">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.SupplierId }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitsSold Definition -->
+    <ng-container matColumnDef="UnitsSold">
+      <mat-header-cell *matHeaderCellDef> UnitsSold </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsSold }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitWeight Definition -->
+    <ng-container matColumnDef="UnitWeight">
+      <mat-header-cell *matHeaderCellDef> UnitWeight </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitWeight }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitDimensions Definition -->
+    <ng-container matColumnDef="UnitDimensions">
+      <mat-header-cell *matHeaderCellDef> UnitDimensions </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitDimensions }} </mat-cell>
+    </ng-container>
+
+    <!-- UnitsOnOrder Definition -->
+    <ng-container matColumnDef="UnitCost">
+      <mat-header-cell *matHeaderCellDef> UnitCost </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitCost }} </mat-cell>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <mat-header-row
+      *matHeaderRowDef="[
+        'Id',
+        'Name',
+        'Price',
+        'CatergoryId',
+        'ImageOne',
+        'ImageTwo',
+        'ImageThree',
+        'ImageFour',
+        'ImageFive',
+        'UnitsInStock',
+        'UnitsOnOrder',
+        'UnitsReorderLevel',
+        'SupplierId',
+        'UnitsSold',
+        'UnitWeight',
+        'UnitDimensions',
+        'UnitCost'
+      ]"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="
+        let row;
+        columns: [
+          'Id',
+          'Name',
+          'Price',
+          'CatergoryId',
+          'ImageOne',
+          'ImageTwo',
+          'ImageThree',
+          'ImageFour',
+          'ImageFive',
+          'UnitsInStock',
+          'UnitsOnOrder',
+          'UnitsReorderLevel',
+          'SupplierId',
+          'UnitsSold',
+          'UnitWeight',
+          'UnitDimensions',
+          'UnitCost'
+        ]
+      "
+    ></mat-row>
+  </mat-table>
 </div>
