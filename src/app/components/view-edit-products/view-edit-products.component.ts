@@ -18,9 +18,23 @@ export class ViewEditProductsComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      units: ['', [Validators.required, Validators.min(1)]],
-      price: ['', [Validators.required, Validators.min(0)]]
+      Name: ['', Validators.required],
+      Price: ['', [Validators.required, Validators.min(1)]],
+      CatergoryId: ['', [Validators.required, Validators.min(0)]],
+      Description: ['', Validators.required],
+      ImageOne: ['', [Validators.required]],
+      ImageTwo: ['', ],
+      ImageThree: ['', ],
+      ImageFour: ['', ],
+      ImageFive: ['', ],
+      UnitsInStock: ['', [Validators.required, Validators.min(1)]],
+      UnitsOnOrder: ['', [Validators.required, Validators.min(0)]],
+      UnitsReorderLevel: ['', [Validators.required, Validators.min(0)]],
+      SupplierId: ['', ],
+      UnitsSold: ['', ],
+      UnitWeight: ['', [Validators.required, Validators.min(0)]],
+      UnitDimensions: ['', Validators.required],
+      UnitCost: ['', [Validators.required, Validators.min(0)]]
     });
 
     this.productForm.valueChanges.subscribe(value => {

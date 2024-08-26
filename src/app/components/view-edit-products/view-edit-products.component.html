@@ -1,42 +1,158 @@
 <p>view-edit-products works!</p>
 <div class="add-product-form">
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
     <div>
-      <label for="name">Name:</label>
-      <input id="name" formControlName="name" type="text" />
+      <label for="Name">Name:</label>
+      <input id="Name" formControlName="Name" type="text" />
       <div
         *ngIf="
-          productForm.get('name')?.invalid && productForm.get('name')?.touched
+          productForm.get('Name')?.invalid && productForm.get('Name')?.touched
         "
       >
         Name is required.
       </div>
     </div>
     <div>
-      <label for="units">Units:</label>
-      <input id="units" formControlName="units" type="number" />
+      <label for="Price">Price:</label>
+      <input id="Price" formControlName="Price" type="decimal" step = "0.01"/>
       <div
         *ngIf="
-          productForm.get('units')?.invalid && productForm.get('units')?.touched
+          productForm.get('Price')?.invalid && productForm.get('Price')?.touched
         "
       >
-        Units must be at least 1.
+      Price must be at least 1.
       </div>
     </div>
     <div>
-      <label for="price">Price:</label>
-      <input id="price" formControlName="price" type="decimal" step="0.01" />
+      <label for="CatergoryId">CatergoryId:</label>
+      <input id="CatergoryId" formControlName="CatergoryId" type="number"/>
       <div
         *ngIf="
-          productForm.get('price')?.invalid && productForm.get('price')?.touched
+          productForm.get('CatergoryId')?.invalid && productForm.get('CatergoryId')?.touched
         "
       >
-        Price must be a positive number.
+      Catergory Id is required.
       </div>
     </div>
-    <button type="submit" [disabled]="productForm.invalid">Add Product</button>
+    <div>
+      <label for="Description">Description:</label>
+      <input id="Description" formControlName="Description" type="text" />
+      <div
+        *ngIf="
+          productForm.get('Description')?.invalid && productForm.get('Description')?.touched
+        "
+      >
+      Description is required.
+      </div>
+    </div>
+    <div>
+      <label for="ImageOne">Image One:</label>
+      <input id="ImageOne" formControlName="ImageOne" type="text" />
+      <div
+        *ngIf="
+          productForm.get('ImageOne')?.invalid && productForm.get('ImageOne')?.touched
+        "
+      >
+      At least one image is required.
+      </div>
+    </div>
+    <div>
+      <label for="ImageTwo">Image Two:</label>
+      <input id="ImageTwo" formControlName="ImageTwo" type="text" />
+    </div>
+    <div>
+      <label for="ImageThree">Image Three:</label>
+      <input id="ImageThree" formControlName="ImageThree" type="text" />
+    </div>
+    <div>
+      <label for="ImageFour">Image Four:</label>
+      <input id="ImageFour" formControlName="ImageFour" type="text" />
+    </div>
+    <div>
+      <label for="ImageFive">ImageFive:</label>
+      <input id="ImageFive" formControlName="ImageFive" type="text" />
+    </div>
+    <div>
+      <label for="UnitsInStock">Units In Stock:</label>
+      <input id="UnitsInStock" formControlName="UnitsInStock" type="number" />
+      <div
+        *ngIf="
+          productForm.get('UnitsInStock')?.invalid && productForm.get('UnitsInStock')?.touched
+        "
+      >
+      Units In Stock is required.
+      </div>
+    </div>
+    <div>
+      <label for="UnitsOnOrder">Units On Order:</label>
+      <input id="UnitsOnOrder" formControlName="UnitsOnOrder" type="number" />
+      <div
+        *ngIf="
+          productForm.get('UnitsOnOrder')?.invalid && productForm.get('UnitsOnOrder')?.touched
+        "
+      >
+      Units On Order must be at least 1.
+      </div>
+    </div>
+    <div>
+      <label for="UnitsReorderLevel">Units Reorder Level:</label>
+      <input id="UnitsReorderLevel" formControlName="UnitsReorderLevel" type="number"/>
+      <div
+        *ngIf="
+          productForm.get('UnitsReorderLevel')?.invalid && productForm.get('UnitsReorderLevel')?.touched
+        "
+      >
+      Units Reorder Level must be a positive number.
+      </div>
+    </div>
+    <div>
+      <label for="SupplierId">Supplier Id:</label>
+      <input id="SupplierId" formControlName="SupplierId" type="number" />
+    </div>
+    <div>
+      <label for="UnitsSold">Units Sold:</label>
+      <input id="UnitsSold" formControlName="UnitsSold" type="number" />
+    </div>
+    <div>
+      <label for="UnitWeight">Unit Weight:</label>
+      <input id="UnitWeight" formControlName="UnitWeight" type="decimal" step="0.01" />
+      <div
+        *ngIf="
+          productForm.get('UnitWeight')?.invalid && productForm.get('UnitWeight')?.touched
+        "
+      >
+      Unit Weight must be a positive number.
+      </div>
+    </div>
+    <div>
+      <label for="UnitDimensions">Unit Dimensions:</label>
+      <input id="UnitDimensions" formControlName="UnitDimensions" type="text" />
+      <div
+        *ngIf="
+          productForm.get('UnitDimensions')?.invalid && productForm.get('UnitDimensions')?.touched
+        "
+      >
+      Unit Dimensions is required.
+      </div>
+    </div>
+    <div>
+      <label for="UnitCost">Unit Cost:</label>
+      <input id="UnitCost" formControlName="UnitCost" type="decimal" step="0.01" />
+      <div
+        *ngIf="
+          productForm.get('UnitCost')?.invalid && productForm.get('UnitCost')?.touched
+        "
+      >
+        Unit Cost must be at least 1.
+      </div>
+    </div>
+
+    <button type="submit">Add Product</button>
   </form>
 </div>
+
+<!--Display Product Form-->
 <div class="view-products-table">
   <mat-table>
     <!-- Id Definition -->
@@ -61,6 +177,12 @@
     <ng-container matColumnDef="CatergoryId">
       <mat-header-cell *matHeaderCellDef> CatergoryId </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{ row.CatergoryId }} </mat-cell>
+    </ng-container>
+
+    <!-- Description Definition -->
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Description }} </mat-cell>
     </ng-container>
 
     <!-- ImageOne Definition -->
@@ -148,6 +270,7 @@
         'Name',
         'Price',
         'CatergoryId',
+        'Description',
         'ImageOne',
         'ImageTwo',
         'ImageThree',
@@ -171,6 +294,7 @@
           'Name',
           'Price',
           'CatergoryId',
+          'Description',
           'ImageOne',
           'ImageTwo',
           'ImageThree',
