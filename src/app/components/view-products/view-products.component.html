@@ -1,0 +1,251 @@
+<div class="view-products-table" *ngIf="products && products.length > 0">
+
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  <mat-table [dataSource]="products" class="mat-elevation-z8">
+    <!-- Define Columns -->
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.id }} </mat-cell>
+    </ng-container>
+    <!-- Repeat for other columns -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.price }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CategoryId">
+      <mat-header-cell *matHeaderCellDef> CategoryId </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.categoryid }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.description }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageOne">
+      <mat-header-cell *matHeaderCellDef> ImageOne </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.imageOne }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageTwo">
+      <mat-header-cell *matHeaderCellDef> ImageTwo </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.imageTwo }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageThree">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.imageThree }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageFour">
+      <mat-header-cell *matHeaderCellDef> ImageFour </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.imageFour }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageFive">
+      <mat-header-cell *matHeaderCellDef> ImageFive </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.imageFive }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsInStock">
+      <mat-header-cell *matHeaderCellDef> UnitsInStock </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitsInStock }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsOnOrder">
+      <mat-header-cell *matHeaderCellDef> UnitsOnOrder </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitsOnOrder }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsReorderLevel">
+      <mat-header-cell *matHeaderCellDef> UnitsReorderLevel </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitsReorderLevel }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SupplierId">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.supplierId }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsSold">
+      <mat-header-cell *matHeaderCellDef> UnitsSold </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitsSold }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitWeight">
+      <mat-header-cell *matHeaderCellDef> UnitWeight </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitWeight }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitDimensions">
+      <mat-header-cell *matHeaderCellDef> UnitDimensions </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitDimensions }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitCost">
+      <mat-header-cell *matHeaderCellDef> UnitCost </mat-header-cell>
+      <mat-cell *matCellDef="let product"> {{ product.unitCost }} </mat-cell>
+    </ng-container>
+
+    <!-- Header Row -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <!-- Data Rows -->
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+
+
+
+
+
+
+
+<!--<p>view-products works!</p>
+div class="view-products-table" *ngFor="let product of products">
+  <mat-table>
+    <ng-container matColumnDef="Id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+      <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Price }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="CatergoryId">
+      <mat-header-cell *matHeaderCellDef> CatergoryId </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.CatergoryId }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.Description }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageOne">
+      <mat-header-cell *matHeaderCellDef> ImageOne </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageOne }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageTwo">
+      <mat-header-cell *matHeaderCellDef> ImageTwo </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageTwo }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageThree">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageThree }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageFour">
+      <mat-header-cell *matHeaderCellDef> ImageFour </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageFour }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ImageFive">
+      <mat-header-cell *matHeaderCellDef> ImageFive </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.ImageFive }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsInStock">
+      <mat-header-cell *matHeaderCellDef> UnitsInStock </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsInStock }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsOnOrder">
+      <mat-header-cell *matHeaderCellDef> UnitsOnOrder </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsOnOrder }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsReorderLevel">
+      <mat-header-cell *matHeaderCellDef> UnitsReorderLevel </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsReorderLevel }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SupplierId">
+      <mat-header-cell *matHeaderCellDef> ImageThree </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.SupplierId }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitsSold">
+      <mat-header-cell *matHeaderCellDef> UnitsSold </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitsSold }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitWeight">
+      <mat-header-cell *matHeaderCellDef> UnitWeight </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitWeight }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitDimensions">
+      <mat-header-cell *matHeaderCellDef> UnitDimensions </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitDimensions }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UnitCost">
+      <mat-header-cell *matHeaderCellDef> UnitCost </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{ row.UnitCost }} </mat-cell>
+    </ng-container>-->
+
+    <!-- Header and Row Declarations -->
+    <!--<mat-header-row
+      *matHeaderRowDef="[
+        'Id',
+        'Name',
+        'Price',
+        'CatergoryId',
+        'Description',
+        'ImageOne',
+        'ImageTwo',
+        'ImageThree',
+        'ImageFour',
+        'ImageFive',
+        'UnitsInStock',
+        'UnitsOnOrder',
+        'UnitsReorderLevel',
+        'SupplierId',
+        'UnitsSold',
+        'UnitWeight',
+        'UnitDimensions',
+        'UnitCost'
+      ]"
+    ></mat-header-row>-->
+    <!--<mat-row
+      *matRowDef="
+        let row;
+        columns: [
+          'Id',
+          'Name',
+          'Price',
+          'CatergoryId',
+          'Description',
+          'ImageOne',
+          'ImageTwo',
+          'ImageThree',
+          'ImageFour',
+          'ImageFive',
+          'UnitsInStock',
+          'UnitsOnOrder',
+          'UnitsReorderLevel',
+          'SupplierId',
+          'UnitsSold',
+          'UnitWeight',
+          'UnitDimensions',
+          'UnitCost'
+        ]
+      "
+    ></mat-row>
+  </mat-table>
+</div>-->

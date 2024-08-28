@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy , OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
 import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
@@ -20,7 +20,7 @@ export class ViewEditProductsComponent {
     this.productForm = this.fb.group({
       Name: ['', Validators.required],
       Price: ['', [Validators.required, Validators.min(1)]],
-      CatergoryId: ['', [Validators.required, Validators.min(0)]],
+      CategoryId: ['', [Validators.required, Validators.min(0)]],
       Description: ['', Validators.required],
       ImageOne: ['', [Validators.required]],
       ImageTwo: ['', ],
@@ -53,3 +53,6 @@ export class ViewEditProductsComponent {
     }
   }
 }
+
+
+

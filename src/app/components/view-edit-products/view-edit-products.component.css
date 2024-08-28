@@ -1,0 +1,23 @@
+
+label {
+  display: block;
+  position: relative;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+}
+
+
+
+
+input {
+  margin-left: 250px;
+}
+button{
+  margin-left: 325px;
+}
+
+h3{
+  margin-left: 20px;
+  margin-top: 20px;
+}

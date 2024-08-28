@@ -9,11 +9,12 @@ import { ViewEditShippersComponent } from './components/view-edit-shippers/view-
 import { CommonModule } from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
+import { ViewProductsComponent } from "./components/view-products/view-products.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, CommonModule, MatSidenavModule, MatTabsModule, ViewEditCustomersComponent, ViewEditProductsComponent, ViewEditSuppliersComponent, ViewEditShippersComponent, ViewEditOrdersComponent],
+  imports: [RouterOutlet, RouterLink, CommonModule, MatSidenavModule, MatTabsModule, ViewEditCustomersComponent, ViewEditProductsComponent, ViewEditSuppliersComponent, ViewEditShippersComponent, ViewEditOrdersComponent, ViewProductsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
