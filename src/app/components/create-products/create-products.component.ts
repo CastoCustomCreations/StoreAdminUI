@@ -6,14 +6,14 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 @Component({
-  selector: 'app-view-edit-products',
+  selector: 'app-create-products',
   standalone: true,
   imports: [CommonModule,  MatCardModule, ReactiveFormsModule, HttpClientModule,MatTableModule ],
-  templateUrl: './view-edit-products.component.html',
-  styleUrl: './view-edit-products.component.css',
+  templateUrl: './create-products.component.html',
+  styleUrl: './create-products.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ViewEditProductsComponent {
+export class CreateProductsComponent {
   productForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
@@ -36,6 +36,7 @@ export class ViewEditProductsComponent {
       UnitDimensions: ['', Validators.required],
       UnitCost: ['', [Validators.required, Validators.min(0)]]
     });
+
 
     this.productForm.valueChanges.subscribe(value => {
       console.log(this.productForm);

@@ -13,7 +13,7 @@ label span {
 label input,
 label textarea,
 label select {
-  margin-left: 150px;
+  margin-left: 250px;
 }
 button{
   margin-left: 275px;
@@ -36,4 +36,10 @@ h3{
   text-align: center;
   line-height: 75px;
   font-size: 30px;
+}
+h6{
+  font-size: 12px;
+  text-align: end;
+  margin-right: 100px;
+  color: red;
 }

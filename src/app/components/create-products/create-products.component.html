@@ -1,0 +1,151 @@
+
+<div class="flex-container">
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <h3>Create New Product</h3>
+    <div>
+      <label for="Name"><span> Name:</span><input id="Name" formControlName="Name" type="text" /></label>
+      <div
+        *ngIf="
+          productForm.get('Name')?.invalid && productForm.get('Name')?.touched
+        "
+      ><h6>* Name is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="Price"><span>Price:</span><input id="Price" formControlName="Price" type="decimal" step = "0.01"/></label>
+      <div
+        *ngIf="
+          productForm.get('Price')?.invalid && productForm.get('Price')?.touched
+        "
+      >
+      <h6>* Price must be at least 1.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="CategoryId"><span>CategoryId:</span><input id="CategoryId" formControlName="CategoryId" type="number"/></label>
+
+      <div
+        *ngIf="
+          productForm.get('CategoryId')?.invalid && productForm.get('CategoryId')?.touched
+        "
+      >
+      <h6>Catergory Id is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="Description"><span>Description:</span><input id="Description" formControlName="Description" type="text" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('Description')?.invalid && productForm.get('Description')?.touched
+        "
+      >
+      <h6>Description is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="ImageOne"><span>Image One:</span><input id="ImageOne" formControlName="ImageOne" type="file" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('ImageOne')?.invalid && productForm.get('ImageOne')?.touched
+        "
+      >
+      <h6>At least one image is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="ImageTwo"><span>Image Two:</span><input id="ImageTwo" formControlName="ImageTwo" type="file" /></label>
+
+    </div>
+    <div>
+      <label for="ImageThree"><span>Image Three:</span><input id="ImageThree" formControlName="ImageThree" type="file" /></label>
+
+    </div>
+    <div>
+      <label for="ImageFour"><span>Image Four:</span><input id="ImageFour" formControlName="ImageFour" type="file" /></label>
+
+    </div>
+    <div>
+      <label for="ImageFive"><span>ImageFive:</span><input id="ImageFive" formControlName="ImageFive" type="file" /></label>
+
+    </div>
+    <div>
+      <label for="UnitsInStock"><span>Units In Stock:</span><input id="UnitsInStock" formControlName="UnitsInStock" type="number" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitsInStock')?.invalid && productForm.get('UnitsInStock')?.touched
+        "
+      >
+      <h6>Units In Stock is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="UnitsOnOrder"><span>Units On Order:</span><input id="UnitsOnOrder" formControlName="UnitsOnOrder" type="number" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitsOnOrder')?.invalid && productForm.get('UnitsOnOrder')?.touched
+        "
+      >
+      <h6>Units On Order must be at least 1.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="UnitsReorderLevel"><span>Units Reorder Level:</span><input id="UnitsReorderLevel" formControlName="UnitsReorderLevel" type="number"/></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitsReorderLevel')?.invalid && productForm.get('UnitsReorderLevel')?.touched
+        "
+      >
+      <h6>Units Reorder Level must be a positive number.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="SupplierId"><span>Supplier Id:</span><input id="SupplierId" formControlName="SupplierId" type="number" /></label>
+
+    </div>
+    <div>
+      <label for="UnitsSold"><span>Units Sold:</span><input id="UnitsSold" formControlName="UnitsSold" type="number" /></label>
+
+    </div>
+    <div>
+      <label for="UnitWeight"><span>Unit Weight:</span><input id="UnitWeight" formControlName="UnitWeight" type="decimal" step="0.01" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitWeight')?.invalid && productForm.get('UnitWeight')?.touched
+        "
+      >
+      <h6>Unit Weight must be a positive number.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="UnitDimensions"><span>Unit Dimensions:</span><input id="UnitDimensions" formControlName="UnitDimensions" type="text" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitDimensions')?.invalid && productForm.get('UnitDimensions')?.touched
+        "
+      >
+      <h6> Dimensions is required.</h6>
+      </div>
+    </div>
+    <div>
+      <label for="UnitCost"><span>Unit Cost:</span><input id="UnitCost" formControlName="UnitCost" type="decimal" step="0.01" /></label>
+
+      <div
+        *ngIf="
+          productForm.get('UnitCost')?.invalid && productForm.get('UnitCost')?.touched
+        "
+      >
+      <h6> Unit Cost must be at least 1.</h6>
+      </div>
+    </div>
+
+    <button type="submit">Create Product</button>
+  </form>
+</div>
