@@ -5,14 +5,14 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 @Component({
-  selector: 'app-view-edit-customers',
+  selector: 'app-create-customers',
   standalone: true,
   imports: [ReactiveFormsModule, HttpClientModule, CommonModule,  MatCardModule],
-  templateUrl: './view-edit-customers.component.html',
-  styleUrl: './view-edit-customers.component.css',
+  templateUrl: './create-customers.component.html',
+  styleUrl: './create-customers.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ViewEditCustomersComponent {
+export class CreateCustomersComponent {
   signUpForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {

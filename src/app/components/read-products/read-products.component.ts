@@ -5,15 +5,15 @@ import { CommonModule } from '@angular/common';
 import { MatTableModule, MatHeaderCellDef, MatCellDef } from '@angular/material/table';
 
 @Component({
-  selector: 'app-view-products',
+  selector: 'app-read-products',
   standalone: true,
   imports: [CommonModule, MatTableModule, MatCellDef, MatHeaderCellDef ],
-  templateUrl: './view-products.component.html',
-  styleUrl: './view-products.component.css',
+  templateUrl: './read-products.component.html',
+  styleUrl: './read-products.component.css',
 
 })
 
-export class ViewProductsComponent implements OnInit {
+export class ReadProductsComponent implements OnInit {
     products: Product[] = [];
     displayedColumns: string[] = [
       'Id', 'Name', 'Price', 'CategoryId', 'Description',

@@ -1,4 +1,4 @@
-<div class="view-products-table" *ngIf="products && products.length > 0">
+<div class="read-products-table" *ngIf="products && products.length > 0">
 
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   <mat-table [dataSource]="products" class="mat-elevation-z8">
@@ -106,8 +106,8 @@
 
 
 
-<!--<p>view-products works!</p>
-div class="view-products-table" *ngFor="let product of products">
+<!--<p>read-products works!</p>
+div class="read-products-table" *ngFor="let product of products">
   <mat-table>
     <ng-container matColumnDef="Id">
       <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
