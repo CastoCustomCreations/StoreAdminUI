@@ -14,9 +14,9 @@ import { Customer } from '../../models/customer.model';
 export class ReadCustomersComponent implements OnInit {
   customers: Customer[] = [];
   displayedColumns: string[] = [
-    'Id', 'First Name', 'Last Name', 'Address1', 'Address2',
+    'Id', 'FirstName', 'LastName', 'Address1', 'Address2',
     'City', 'State', 'Zipcode', 'Phone',
-    'email'
+    'Email'
   ];
 
 

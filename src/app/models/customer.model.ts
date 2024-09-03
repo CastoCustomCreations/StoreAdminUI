@@ -10,6 +10,5 @@ export interface Customer {
   zipcode?: string;
   phone?: string;
   email: string;
-  userName?: string;
-  password?: string;
+
 }

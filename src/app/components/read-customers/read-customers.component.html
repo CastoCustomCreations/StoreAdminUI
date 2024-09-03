@@ -9,42 +9,46 @@
       <mat-cell *matCellDef="let customer"> {{ customer.id }} </mat-cell>
     </ng-container>
     <!-- Repeat for other columns -->
-    <ng-container matColumnDef="firstName">
+    <ng-container matColumnDef="FirstName">
       <mat-header-cell *matHeaderCellDef> firstName </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.firstName }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="lastName">
+    <ng-container matColumnDef="LastName">
       <mat-header-cell *matHeaderCellDef> lastName </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.lastName }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="address1">
+    <ng-container matColumnDef="Address1">
       <mat-header-cell *matHeaderCellDef> address1 </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.address1 }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="address2">
+    <ng-container matColumnDef="Address2">
       <mat-header-cell *matHeaderCellDef> address2 </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.address2 }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="city">
+    <ng-container matColumnDef="City">
       <mat-header-cell *matHeaderCellDef> city </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.city }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="state">
+    <ng-container matColumnDef="State">
       <mat-header-cell *matHeaderCellDef> state </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.state }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="zipcode">
+    <ng-container matColumnDef="Zipcode">
       <mat-header-cell *matHeaderCellDef> zipcode </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.zipcode }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="email">
+    <ng-container matColumnDef="Phone">
+      <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+      <mat-cell *matCellDef="let customer"> {{ customer.phone }} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Email">
       <mat-header-cell *matHeaderCellDef> email </mat-header-cell>
       <mat-cell *matCellDef="let customer"> {{ customer.email }} </mat-cell>
     </ng-container>

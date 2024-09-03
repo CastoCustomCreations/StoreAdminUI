@@ -7,7 +7,7 @@ import { Customer } from '../models/customer.model';
   providedIn: 'root'
 })
 export class CustomerService {
-  private apiUrl = 'http://localhost:5050/api/customers/';
+  private apiUrl = 'http://localhost:5050/api/Customers';
   private customersUpdated = new Subject<Customer[]>();
 
   constructor(private http: HttpClient) { }
