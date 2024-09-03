@@ -11,10 +11,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import { ReadProductsComponent } from "./components/read-products/read-products.component";
 import { CreateCustomersComponent } from './components/create-customers/create-customers.component';
+import { ReadCustomersComponent } from "./components/read-customers/read-customers.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, CommonModule,  MatSidenavModule, MatTabsModule,  CreateCustomersComponent,CreateProductsComponent, ViewEditSuppliersComponent, ViewEditShippersComponent, ViewEditOrdersComponent, ReadProductsComponent],
+  imports: [RouterOutlet, RouterLink, CommonModule, MatSidenavModule, MatTabsModule, CreateCustomersComponent, CreateProductsComponent, ViewEditSuppliersComponent, ViewEditShippersComponent, ViewEditOrdersComponent, ReadProductsComponent, ReadCustomersComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
