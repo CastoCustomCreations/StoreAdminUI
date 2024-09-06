@@ -45,6 +45,7 @@ export class CreateProductsComponent {
 
   onSubmit(): void {
     if (this.productForm.valid) {
+
       this.http.post('http://localhost:5050/api/Products', this.productForm.value)
         .subscribe(response => {
           console.log('Product data saved successfully:', response);
